@@ -42,4 +42,3 @@ python code/background_builder.py
 
 * **Author:** Paul Jarvis (Independent Theoretical Physics Researcher, UK)
 * **Email:** mrpaulwjarvis@gmail.com
-* **Core Project Tracking:** Foundational companion framework actively under formal editorial review at Physical Review D (Accession Code: DT18481).
