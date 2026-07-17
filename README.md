@@ -1,26 +1,27 @@
-# Relational Quantum Cosmology: Sourcing the Cosmological Stress-Energy Tensor
+# Relational Quantum Cosmology: An Effective Stress-Energy Tensor from an Assumed Entanglement-Decay Ansatz
 
-This repository hosts the official numerical simulation engine for deriving the macroscopic perfect-fluid stress-energy tensor directly from the spectral scaling properties of a background-independent quantum mutual-information substrate.
+This repository works out the macroscopic perfect-fluid stress-energy tensor implied by a specific ansatz for a background-independent quantum mutual-information substrate: that mutual information decays with relational distance as a power law, `I(i,j) ~ d(i,j)^-alpha`.
 
 ## Theoretical Overview
 
-Instead of postulating manual inflaton fields or unphysical fluid parameters, this framework demonstrates that the cosmic stress-energy tensor emerges natively as an exact thermodynamic consequence of global volume changes of the substrate partition function. 
+Given that ansatz, the cosmic stress-energy tensor follows as an exact algebraic consequence of a canonical partition function over the substrate's MI-Laplacian spectrum - no inflaton field or hand-fit fluid parameters needed. The dictionary `w_eff = alpha/3 - 1` links the assumed entanglement-decay exponent directly to the macroscopic equation of state.
 
-By tracking how the microscopic network coordinates rearrange during spatial expansion, the model establishes a direct connection between microscopic quantum entanglement decay and the macroscopic cosmological equation of state.
+This is a conditional, model-dependent result: the algebra connecting the ansatz to the equation of state is exact and holds at any system size, but the power-law ansatz itself is not derived here (it is motivated by analogy to modular Hamiltonians) and is the open assumption the framework rests on. See `main.tex` (Sections "Homogeneous spectral scaling" and "Illustrative phase mapping and code self-consistency") for the honest scope of what is and isn't established.
 
 ## Core Simulation Features
 
-Running the optimized background pipeline captures the exact properties of the early-universe cosmic evolution timeline:
-* **The Ultraviolet Attractor Phase:** Information saturation over a complete-graph topology pins the initial state parameter exactly to the de Sitter cosmological constant baseline (w = -1.0).
-* **The Relational Corridor:** The network relaxes smoothly through the pressureless matter dust threshold (w = 0), marked by a distinct, sharp downward log-scale pressure spike.
-* **The Causal Bounce Barrier:** The matrix variables smoothly lock onto a terminal hyper-stiff phase (w = 1.0), forcing the background energy density to dilute at its absolute physical speed limit.
+The background pipeline illustrates the dictionary across an imposed (not measured or derived) phase schedule spanning three named regimes:
+* **The Ultraviolet Attractor Phase:** Information saturation over a complete-graph topology sets alpha -> 0, giving the de Sitter cosmological constant baseline (w = -1.0) by construction.
+* **The Relational Corridor:** The imposed schedule sweeps through alpha = 3, the pressureless matter dust value (w = 0).
+* **The Causal Bounce Barrier:** The schedule terminates at alpha = 6, a hyper-stiff phase (w = 1.0).
 
 ## Repository Layout
 
 * `/main.tex`: LaTeX manuscript file.
 * `/main.pdf`: PDF manuscript file.
-* `/code/background_builder.py`: Python production script housing the substrate matrix initialization loop and graphic plot generators.
-* `/figures/stress_energy_tensor_derivation.png`: Output dual-panel vector graphics displaying the verified cosmic phase trajectory.
+* `/code/background_builder.py`: Generates the illustrative phase-schedule figure.
+* `/code/spectral_scaling_check.py`: Self-consistency check confirming the code correctly implements the exact eigenvalue-scaling identity of Sec. "Homogeneous spectral scaling" - not independent physical evidence (that identity is exact algebra given the ansatz, so it cannot fail; see the paper for why an earlier version of this repo mistakenly described it as a "non-circular" test).
+* `/figures/stress_energy_tensor_derivation.png`: Output dual-panel figure showing the illustrative phase trajectory.
 
 ## Usage and Dependencies
 
@@ -33,9 +34,13 @@ The simulation engine is fully self-contained and relies only on standard scient
 * matplotlib
 
 ### Execution
-Run the background builder directly from your terminal workspace:
+Generate the illustrative phase-schedule figure:
 ```bash
 python code/background_builder.py
+```
+Run the self-consistency check (matplotlib not required):
+```bash
+python code/spectral_scaling_check.py
 ```
 
 ## Contact and Portfolio Summary

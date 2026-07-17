@@ -153,7 +153,7 @@ def main():
     plt.savefig(output_png, bbox_inches="tight")
     plt.close()
     
-    print(f"\n-> Run verified. Plots cleanly saved inside folder: {OUTPUT_DIR}")
+    print(f"\n-> Run complete (illustrative phase-schedule plot, not a verification - see paper). Plots saved inside folder: {OUTPUT_DIR}")
     print(f"Total script runtime: {time.time() - t_start:.2f}s")
     print("=" * 65)
 
