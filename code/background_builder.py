@@ -80,7 +80,7 @@ def evaluate_thermodynamics(nonzero_modes, beta, a, alpha_current):
 def main():
     t_start = time.time()
     print("=" * 65)
-    print("  RELATIONAL ENTAGLEMENT SPACETIME EXTRACTOR — Sourcing T_mu_nu")
+    print("  RELATIONAL ENTAGLEMENT SPACETIME EXTRACTOR - Sourcing T_mu_nu")
     print("=" * 65)
     
     # Initialize substrate matrix parameters
